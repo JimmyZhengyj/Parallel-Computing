@@ -35,7 +35,7 @@ add_library(benchmark OBJECT benchmark.cpp)
 target_compile_definitions(benchmark PRIVATE MAX_SPEED=${MAX_SPEED} $<$<BOOL:${ALL_SIZES}>:ALL_SIZES>)
 target_compile_features(benchmark PRIVATE cxx_std_11)
 
-foreach (BENCHMARK IN ITEMS naive blocked blas)
+foreach (BENCHMARK IN ITEMS naive blocked blas blocked-origin loopReorder repack twolevel)
     # Create benchmarking executable
     add_executable(benchmark-${BENCHMARK} dgemm-${BENCHMARK}.c)
     target_link_libraries(benchmark-${BENCHMARK} PRIVATE benchmark ${BLAS_LIBRARIES})
