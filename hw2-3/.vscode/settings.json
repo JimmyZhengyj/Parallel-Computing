@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "chrono": "cpp",
+        "__bit_reference": "cpp",
+        "algorithm": "cpp"
+    }
+}
